@@ -68,7 +68,13 @@ const Hero = () => {
           >
             <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full bg-gradient-to-br from-primary-400 to-primary-600 p-1 animate-float">
               <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center">
-                <span className="text-6xl">👨‍💻</span>
+                <img
+                  src={personalInfo.image}
+                  alt={personalInfo.title}
+                  className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center"
+                //   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+                {/* <span className="text-6xl">👨‍💻</span> */}
               </div>
             </div>
             

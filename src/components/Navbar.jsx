@@ -15,7 +15,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+  const navLinks = ['Home', 'About', 'Skills', 'Projects'];
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
@@ -46,6 +46,14 @@ const Navbar = ({ theme, toggleTheme }) => {
                 {link}
               </motion.a>
             ))}
+            <motion.a
+                href="#contact"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-5 py-2 rounded-lg bg-primary-600 text-white font-medium shadow-md hover:bg-primary-700 transition-all"
+            >
+                Contact
+            </motion.a>
             <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
           </div>
 
@@ -87,26 +95,3 @@ const Navbar = ({ theme, toggleTheme }) => {
 };
 
 export default Navbar;
-
-// import React from "react";
-// import DarkModeToggle from "./DarkModeToggle";
-
-// const Navbar = () => {
-//   return (
-//     <nav className="w-full flex justify-between items-center p-6 bg-white dark:bg-gray-800 shadow-md fixed z-50">
-//       <div className="text-xl font-bold text-primary">Ahmed Eid</div>
-//       <ul className="flex gap-6">
-//         {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
-//           <li key={item}>
-//             <a href={`#${item.toLowerCase()}`} className="hover:text-primary transition">
-//               {item}
-//             </a>
-//           </li>
-//         ))}
-//         <li><DarkModeToggle /></li>
-//       </ul>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;

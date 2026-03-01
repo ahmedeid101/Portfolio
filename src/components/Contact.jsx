@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi';
 import emailjs from 'emailjs-com';
 import { personalInfo } from '../utils/constants';
-import { FaWhatsapp } from 'react-icons/fa'; // Add this
+import { FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -121,11 +121,10 @@ const Contact = () => {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                href={`https://wa.me/201092887320`} // Your WhatsApp number in international format
+                href={personalInfo.whatsapp} // Your WhatsApp number in international format
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-900 hover:text-white transition-all"
-                // className="p-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all"
             >
                 <FaWhatsapp size={20} />
             </motion.a> 

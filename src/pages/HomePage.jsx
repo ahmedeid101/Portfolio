@@ -4,13 +4,17 @@ import About from '../components/About';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
+import Services from '../components/Services';
+import EducationCertifications from '../components/EducationCertifications';
 
 const HomePage = () => {
   return (
     <main>
       <Hero />
       <About />
+      <EducationCertifications /> 
       <Skills />
+      <Services />
       <Projects />
       <Contact />
     </main>

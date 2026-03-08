@@ -15,7 +15,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects'];
+  const navLinks = ['Home', 'About', 'Education', 'Skills', 'Services', 'Projects'];
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
@@ -33,7 +33,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {navLinks.map((link, index) => (
               <motion.a
                 key={link}

@@ -14,21 +14,48 @@ export const personalInfo = {
 };
 
 export const skills = [
-  { name: "React", level: 90, icon: "⚛️", category: "frontend" },
-  { name: "Node.js", level: 90, icon: "🟢", category: "backend" },
-  { name: "Express", level: 85, icon: "🚂", category: "backend" },
-  { name: "Nest", level: 85, icon: "🟥", category: "backend" },
-  { name: "MongoDB", level: 85, icon: "🍃", category: "database" },
-  { name: "Postgresql", level: 85, icon: "🐘", category: "database" },
-  { name: "Tailwind CSS", level: 90, icon: "🎨", category: "frontend" },
-  { name: "Redux", level: 85, icon: "🔄", category: "frontend" },
-  { name: "JavaScript", level: 90, icon: "🟨", category: "language" },
-  { name: "TypeScript", level: 85, icon: "📘", category: "language" },
-  { name: "Java", level: 85, icon: "♨️", category: "language" },
-  { name: "Git", level: 90, icon: "📦", category: "tools" },
-  { name: "Docker", level: 85, icon: "🐳", category: "tools" },
-  { name: "REST APIs", level: 90, icon: "🔌", category: "backend" },
-  { name: "JWT Auth", level: 80, icon: "🔐", category: "security" }
+    // Frontend
+  { name: "React", level: 100, category: "frontend" },
+  { name: "TypeScript", level: 100, category: "frontend" },
+  { name: "Redux", level: 100, category: "frontend" },
+  { name: "Tailwind CSS", level: 100, category: "frontend" },
+  { name: "HTML5", level: 100, category: "frontend" },
+  { name: "CSS3", level: 100, category: "frontend" },
+  
+  // Backend
+  { name: "Node.js", level: 100, category: "backend" },
+  { name: "Express", level: 100, category: "backend" },
+  { name: "Nest", level: 100, category: "backend" },
+  { name: "GraphQL", level: 100, category: "backend" },
+  { name: "REST APIs", level: 100, category: "backend" },
+  
+  // Database
+  { name: "MongoDB", level: 100, category: "database" },
+  { name: "Firebase", level: 100, category: "database" },
+  { name: "PostgreSQL", level: 100, category: "database" },
+  
+  // Tools & Workflow
+  { name: "Git", level: 100, category: "tools" },
+  { name: "Docker", level: 100, category: "tools" },
+  { name: "Jest", level: 100, category: "tools" },
+  { name: "Webpack", level: 100, category: "tools" },
+  { name: "Postman", level: 100, category: "tools" },
+
+  // { name: "React", level: 90, icon: "⚛️", category: "frontend" },
+  // { name: "Node.js", level: 90, icon: "🟢", category: "backend" },
+  // { name: "Express", level: 85, icon: "🚂", category: "backend" },
+  // { name: "Nest", level: 85, icon: "🟥", category: "backend" },
+  // { name: "MongoDB", level: 85, icon: "🍃", category: "database" },
+  // { name: "Postgresql", level: 85, icon: "🐘", category: "database" },
+  // { name: "Tailwind CSS", level: 90, icon: "🎨", category: "frontend" },
+  // { name: "Redux", level: 85, icon: "🔄", category: "frontend" },
+  // { name: "JavaScript", level: 90, icon: "🟨", category: "language" },
+  // { name: "TypeScript", level: 85, icon: "📘", category: "language" },
+  // { name: "Java", level: 85, icon: "♨️", category: "language" },
+  // { name: "Git", level: 90, icon: "📦", category: "tools" },
+  // { name: "Docker", level: 85, icon: "🐳", category: "tools" },
+  // { name: "REST APIs", level: 90, icon: "🔌", category: "backend" },
+  // { name: "JWT Auth", level: 80, icon: "🔐", category: "security" }
 ];
 
 export const projects = [

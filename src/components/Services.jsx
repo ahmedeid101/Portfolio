@@ -1,4 +1,3 @@
-// src/components/Services/Services.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -8,7 +7,6 @@ import {
   FiSmartphone, 
   FiShield, 
   FiCloud, 
-  FiSettings,
   FiTrendingUp,
   FiUsers,
   FiGitBranch,

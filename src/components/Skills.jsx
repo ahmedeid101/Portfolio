@@ -30,7 +30,6 @@ const iconMap = {
   'Node.js': SiNodedotjs,
   'Express': SiExpress,
   'Nest': SiNestjs,
-  //'REST APIs': SiPrestashop,
   'MongoDB': SiMongodb,
   'PostgreSQL': SiPostgresql,
   'Tailwind CSS': SiTailwindcss,

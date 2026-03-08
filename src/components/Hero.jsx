@@ -1,7 +1,6 @@
-// src/components/Home/Hero.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiDownload, FiFolder, FiLinkedin } from 'react-icons/fi';
+import { FiDownload, FiFolder } from 'react-icons/fi';
 import { personalInfo } from '../utils/constants';
 
 const Hero = () => {
@@ -9,13 +8,6 @@ const Hero = () => {
     const projectsSection = document.getElementById('projects');
     if (projectsSection) {
       projectsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -125,63 +117,6 @@ const Hero = () => {
                 Resume
               </motion.a>
             </motion.div>
-
-            {/* Quick Stats */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex flex-wrap gap-6 mt-8 justify-center lg:justify-start"
-            >
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">5+</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">20+</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400">Projects Completed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">8</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400">Certifications</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">30+</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400">Happy Clients</div>
-              </div>
-            </motion.div> */}
-
-            {/* Social Links - Moved LinkedIn here as secondary */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex items-center gap-4 mt-6 justify-center lg:justify-start"
-            >
-              <span className="text-sm text-gray-500 dark:text-gray-500">Connect:</span>
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                href={personalInfo.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-primary-600 hover:text-white dark:hover:bg-primary-600 transition-all duration-300"
-                aria-label="LinkedIn Profile"
-              >
-                <FiLinkedin size={18} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                href={personalInfo.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white dark:hover:bg-gray-700 transition-all duration-300"
-                aria-label="GitHub Profile"
-              >
-                <FiGithub size={18} />
-              </motion.a>
-            </motion.div> */}
           </motion.div>
 
           {/* Right Content - Avatar */}
@@ -236,12 +171,6 @@ const Hero = () => {
                     {/* Online Status Indicator */}
                     <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-white dark:border-gray-800 animate-pulse"></div>
                   </div>
-                  
-                  {/* Avatar Details */}
-                  {/* <div className="text-center">
-                    <h3 className="font-bold text-gray-900 dark:text-white">Ahmed Eid</h3>
-                    <p className="text-sm text-primary-600 dark:text-primary-400">Full Stack Developer</p>
-                  </div> */}
                   
                   {/* Tech Stack Icons */}
                   <div className="flex gap-2 mt-4">
@@ -316,95 +245,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-// import React from 'react';
-// import { motion } from 'framer-motion';
-// import { FiGithub, FiLinkedin, FiDownload } from 'react-icons/fi';
-// import { personalInfo } from '../utils/constants';
-
-// const Hero = () => {
-//   return (
-//     <section id="home" className="min-h-screen flex items-center pt-16">
-//       <div className="section-container">
-//         <div className="grid md:grid-cols-2 gap-12 items-center">
-//           {/* Left Content */}
-//           <motion.div
-//             initial={{ opacity: 0, x: -50 }}
-//             animate={{ opacity: 1, x: 0 }}
-//             transition={{ duration: 0.8 }}
-//           >
-//             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-//               Hi, I'm{' '}
-//               <span className="gradient-text">{personalInfo.name}</span>
-//             </h1>
-//             <h2 className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-4">
-//               {personalInfo.role}
-//             </h2>
-//             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
-//               {personalInfo.tagline}
-//             </p>
-            
-//             {/* CTA Buttons */}
-//             <div className="flex flex-wrap gap-4">
-//               <motion.a
-//                 whileHover={{ scale: 1.05 }}
-//                 whileTap={{ scale: 0.95 }}
-//                 href={personalInfo.linkedin}
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 className="flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
-//               >
-//                 <FiLinkedin /> Projects
-//               </motion.a>
-//               {/* <motion.a
-//                 whileHover={{ scale: 1.05 }}
-//                 whileTap={{ scale: 0.95 }}
-//                 href={personalInfo.github}
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 className="flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
-//               >
-//                 <FiGithub /> GitHub
-//               </motion.a> */}
-//               <motion.a
-//                 whileHover={{ scale: 1.05 }}
-//                 whileTap={{ scale: 0.95 }}
-//                 href={personalInfo.resumeUrl}
-//                 download
-//                 className="flex items-center gap-2 px-6 py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg hover:bg-primary-600 hover:text-white transition-all"
-//               >
-//                 <FiDownload /> Resume
-//               </motion.a>
-//             </div>
-//           </motion.div>
-
-//           {/* Right Content - Avatar */}
-//           <motion.div
-//             initial={{ opacity: 0, scale: 0.5 }}
-//             animate={{ opacity: 1, scale: 1 }}
-//             transition={{ duration: 0.8 }}
-//             className="relative"
-//           >
-//             <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full bg-gradient-to-br from-primary-400 to-primary-600 p-1 animate-float">
-//               <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center">
-//                 <img
-//                   src={personalInfo.image}
-//                   alt={personalInfo.title}
-//                   className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center"
-//                 //   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-//                 />
-//                 {/* <span className="text-6xl">👨‍💻</span> */}
-//               </div>
-//             </div>
-            
-//             {/* Decorative elements */}
-//             <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary-200 dark:bg-primary-900 rounded-full blur-3xl opacity-50"></div>
-//             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary-300 dark:bg-primary-800 rounded-full blur-3xl opacity-50"></div>
-//           </motion.div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Hero;

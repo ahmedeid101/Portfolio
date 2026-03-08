@@ -18,7 +18,7 @@ import {
   SiNodedotjs,
   SiUdacity,
 } from "react-icons/si";
-import { FaUniversity, FaGraduationCap } from "react-icons/fa";
+import { FaUniversity } from "react-icons/fa";
 
 import { GiGraduateCap } from 'react-icons/gi';
 

@@ -30,6 +30,7 @@ export const skills = [
   { name: "REST APIs", level: 100, category: "backend" },
   
   // Database
+  { name: "MySQL", level: 100, category: "database" },
   { name: "MongoDB", level: 100, category: "database" },
   { name: "Firebase", level: 100, category: "database" },
   { name: "PostgreSQL", level: 100, category: "database" },
@@ -41,22 +42,37 @@ export const skills = [
   { name: "Webpack", level: 100, category: "tools" },
   { name: "Postman", level: 100, category: "tools" },
 
-  // { name: "React", level: 90, icon: "⚛️", category: "frontend" },
-  // { name: "Node.js", level: 90, icon: "🟢", category: "backend" },
-  // { name: "Express", level: 85, icon: "🚂", category: "backend" },
-  // { name: "Nest", level: 85, icon: "🟥", category: "backend" },
-  // { name: "MongoDB", level: 85, icon: "🍃", category: "database" },
-  // { name: "Postgresql", level: 85, icon: "🐘", category: "database" },
-  // { name: "Tailwind CSS", level: 90, icon: "🎨", category: "frontend" },
-  // { name: "Redux", level: 85, icon: "🔄", category: "frontend" },
-  // { name: "JavaScript", level: 90, icon: "🟨", category: "language" },
-  // { name: "TypeScript", level: 85, icon: "📘", category: "language" },
-  // { name: "Java", level: 85, icon: "♨️", category: "language" },
-  // { name: "Git", level: 90, icon: "📦", category: "tools" },
-  // { name: "Docker", level: 85, icon: "🐳", category: "tools" },
-  // { name: "REST APIs", level: 90, icon: "🔌", category: "backend" },
-  // { name: "JWT Auth", level: 80, icon: "🔐", category: "security" }
+  // Soft Skills (no level percentage, just presence)
+  { name: "Team Collaboration", category: "softskills" },
+  { name: "Communication", category: "softskills" },
+  { name: "Time Management", category: "softskills" },
+  { name: "Problem Solving", category: "softskills" },
+  { name: "Leadership", category: "softskills" },
+  { name: "Adaptability", category: "softskills" },
+  { name: "Critical Thinking", category: "softskills" },
+  { name: "Empathy", category: "softskills" },
+  { name: "Conflict Resolution", category: "softskills" },
+  { name: "Continuous Learning", category: "softskills" },
+  { name: "Mentoring", category: "softskills" },
+  { name: "Project Management", category: "softskills" }
+
 ];
+
+// export const softSkills = [
+//   // Soft Skills (no level percentage, just presence)
+//   { name: "Team Collaboration", category: "softskills" },
+//   { name: "Communication", category: "softskills" },
+//   { name: "Time Management", category: "softskills" },
+//   { name: "Problem Solving", category: "softskills" },
+//   { name: "Leadership", category: "softskills" },
+//   { name: "Adaptability", category: "softskills" },
+//   { name: "Critical Thinking", category: "softskills" },
+//   { name: "Empathy", category: "softskills" },
+//   { name: "Conflict Resolution", category: "softskills" },
+//   { name: "Continuous Learning", category: "softskills" },
+//   { name: "Mentoring", category: "softskills" },
+//   { name: "Project Management", category: "softskills" }
+// ];
 
 export const projects = [
   {
@@ -96,13 +112,13 @@ export const timeline = [
     year: "2026 - Present",
     title: "Full Stack Developer / MERN Stack",
     organization: "Digiliance",
-    description: "Building full-stack applications including E-Learning Platform, Blog Website, Page Turner, and other MERN projects, using React, Node.js, Express, MongoDB, Redux, and Tailwind CSS."
+    description: "Worked on multiple MERN stack projects, gaining experience in React, Node.js, MongoDB, authentication, and deployment workflows."
   },
   {
     year: "2023 - 2025",
     title: "Full Stack Developer / MERN Stack",
     organization: "Freelance & Training Projects",
-    description: "Worked on multiple MERN stack projects, gaining experience in React, Node.js, MongoDB, authentication, and deployment workflows."
+    description: "Building full-stack applications including E-Learning Platform, Blog Website, Page Turner, and other MERN projects, using React, Node.js, Express, MongoDB, Redux, and Tailwind CSS."
   },
   {
     year: "2022 - 2023",

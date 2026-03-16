@@ -5,7 +5,8 @@ import {
   SiReact, 
   SiNodedotjs, 
   SiExpress, 
-  SiMongodb, 
+  SiMongodb,
+  SiFastapi, 
   SiTailwindcss, 
   SiRedux, 
   SiTypescript, 
@@ -20,9 +21,26 @@ import {
   SiJest,
   SiWebpack,
   SiNestjs,
-  SiPostgresql
+  SiPostgresql,
+  SiMysql,
 } from 'react-icons/si';
+
+import { 
+  FiUsers, 
+  FiMessageCircle, 
+  FiClock, 
+  FiZap,
+  FiTrendingUp, 
+  FiGlobe,
+  FiTarget,
+  FiHeart,
+  FiShare2,
+  FiBookOpen,
+  FiThumbsUp,
+  FiAward
+} from 'react-icons/fi';
 import { skills } from '../utils/constants';
+
 
 // Map skill names to their corresponding icons
 const iconMap = {
@@ -30,7 +48,9 @@ const iconMap = {
   'Node.js': SiNodedotjs,
   'Express': SiExpress,
   'Nest': SiNestjs,
+  'REST APIs': SiFastapi,
   'MongoDB': SiMongodb,
+  'MySQL': SiMysql,
   'PostgreSQL': SiPostgresql,
   'Tailwind CSS': SiTailwindcss,
   'Redux': SiRedux,
@@ -44,15 +64,32 @@ const iconMap = {
   'GraphQL': SiGraphql,
   'Firebase': SiFirebase,
   'Jest': SiJest,
-  'Webpack': SiWebpack
+  'Webpack': SiWebpack,
+  
+  // Soft Skills
+  'Team Collaboration': FiUsers,
+  'Communication': FiMessageCircle,
+  'Time Management': FiClock,
+  'Problem Solving': FiZap,
+  'Leadership': FiTrendingUp,
+  'Adaptability': FiGlobe,
+  'Critical Thinking': FiTarget,
+  'Empathy': FiHeart,
+  'Conflict Resolution': FiShare2,
+  'Continuous Learning': FiBookOpen,
+  'Mentoring': FiThumbsUp,
+  'Project Management': FiAward
 };
 
 // Color map for skill icons
 const colorMap = {
   'React': '#61DAFB',
   'Node.js': '#339933',
-  'Express': '#000000',
+  'Express': '#fffffff6',
+  'Nest': '#e61515',
+  'REST APIs': '#2496ED',
   'MongoDB': '#47A248',
+  'PostgreSQL': '#8BC34A',
   'Tailwind CSS': '#06B6D4',
   'Redux': '#764ABC',
   'TypeScript': '#3178C6',
@@ -65,7 +102,21 @@ const colorMap = {
   'GraphQL': '#E10098',
   'Firebase': '#FFCA28',
   'Jest': '#C21325',
-  'Webpack': '#8DD6F9'
+  'Webpack': '#8DD6F9',
+
+  // Soft Skills
+  'Team Collaboration': '#4CAF50',
+  'Communication': '#2196F3',
+  'Time Management': '#FF9800',
+  'Problem Solving': '#9C27B0',
+  'Leadership': '#F44336',
+  'Adaptability': '#00BCD4',
+  'Critical Thinking': '#3F51B5',
+  'Empathy': '#E91E63',
+  'Conflict Resolution': '#FF5722',
+  'Continuous Learning': '#009688',
+  'Mentoring': '#8BC34A',
+  'Project Management': '#673AB7'
 };
 
 const Skills = () => {
@@ -82,7 +133,6 @@ const Skills = () => {
       color: 'from-blue-500 to-cyan-500',
       bgColor: 'bg-blue-50 dark:bg-blue-900/20',
       description: 'Crafting responsive, interactive user interfaces with modern frameworks and libraries. Specializing in component-based architecture and state management for seamless user experiences.',
-
     },
     backend: { 
       title: 'Backend Development', 
@@ -114,14 +164,15 @@ const Skills = () => {
     return acc;
   }, {});
 
+  const techSkillCategories = ['frontend', 'backend', 'database', 'tools'];
+  const softSkills = groupedSkills['softskills'] || [];
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
+      transition: { staggerChildren: 0.1 }
     }
   };
 
@@ -130,11 +181,7 @@ const Skills = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12
-      }
+      transition: { type: "spring", stiffness: 100, damping: 12 }
     }
   };
 
@@ -143,19 +190,11 @@ const Skills = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 50,
-        damping: 20
-      }
+      transition: { type: "spring", stiffness: 50, damping: 20 }
     },
     hover: {
       y: -5,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10
-      }
+      transition: { type: "spring", stiffness: 400, damping: 10 }
     }
   };
 
@@ -170,126 +209,176 @@ const Skills = () => {
           className="text-center mb-12"
         >
           <h2 className="section-title">
-            Technical <span className="gradient-text">Skills</span>
+            Technical & <span className="gradient-text">Soft Skills</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             A comprehensive toolkit of modern technologies and frameworks I use to build scalable, performant applications
           </p>
         </motion.div>
 
+        {/* Tech Skills Grid */}
         <motion.div 
           className="grid lg:grid-cols-2 gap-6"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-        
-          {Object.entries(groupedSkills).map(([category, categorySkills], categoryIndex) => (
-            <motion.div
-              key={category}
-              variants={cardVariants}
-              whileHover="hover"
-              className={`${categories[category]?.bgColor} rounded-2xl p-6 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300`}
-            >
-              {/* Category Header */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`text-3xl bg-gradient-to-r ${categories[category]?.color} p-3 rounded-xl text-white shadow-lg`}>
-                  <span>{categories[category]?.icon}</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                    {categories[category]?.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    {categorySkills.length} technologies
-                  </p>
-                </div>
-              </div>
-
-              {/* Category Description */}
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed border-l-4 border-primary-500 pl-4 italic">
-              {categories[category]?.description}
-             </p>
-
-              {/* Skills Grid */}
-              <motion.div 
-                className="grid grid-cols-2 sm:grid-cols-3 gap-3"
-                variants={containerVariants}
+          {techSkillCategories.map((category) => {
+            const categorySkills = groupedSkills[category] || [];
+            return (
+              <motion.div
+                key={category}
+                variants={cardVariants}
+                whileHover="hover"
+                className={`${categories[category]?.bgColor} rounded-2xl p-6 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300`}
               >
-                {categorySkills.map((skill, index) => {
-                  const IconComponent = iconMap[skill.name] || SiJavascript;
-                  const iconColor = colorMap[skill.name] || '#3B82F6';
-                  
-                  return (
-                    <motion.div
-                      key={skill.name}
-                      variants={itemVariants}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="group relative"
-                    >
-                      <div className="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700">
-                        {/* Icon with gradient background */}
-                        <div className="relative mb-2">
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"></div>
-                          <IconComponent 
-                            className="w-8 h-8 transition-all duration-300 group-hover:scale-110" 
-                            style={{ color: iconColor }}
-                          />
+                {/* Category Header */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className={`text-3xl bg-gradient-to-r ${categories[category]?.color} p-3 rounded-xl text-white shadow-lg`}>
+                    <span>{categories[category]?.icon}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                      {categories[category]?.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      {categorySkills.length} technologies
+                    </p>
+                  </div>
+                </div>
+
+                {/* Category Description */}
+                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed border-l-4 border-primary-500 pl-4 italic">
+                  {categories[category]?.description}
+                </p>
+
+                {/* Skills Grid */}
+                <motion.div 
+                  className="grid grid-cols-2 sm:grid-cols-3 gap-3"
+                  variants={containerVariants}
+                >
+                  {categorySkills.map((skill, index) => {
+                    const IconComponent = iconMap[skill.name] || SiJavascript;
+                    const iconColor = colorMap[skill.name] || '#3B82F6';
+                    
+                    return (
+                      <motion.div
+                        key={skill.name}
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="group relative"
+                      >
+                        <div className="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                          {/* Icon with gradient background */}
+                          <div className="relative mb-2">
+                            <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"></div>
+                            <IconComponent 
+                              className="w-8 h-8 transition-all duration-300 group-hover:scale-110" 
+                              style={{ color: iconColor }}
+                            />
+                          </div>
+                          
+                          {/* Skill name */}
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 text-center group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                            {skill.name}
+                          </span>
+                          
+                          {/* Experience level indicator */}
+                          <div className="w-full mt-2 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <motion.div
+                              initial={{ width: 0 }}
+                              animate={inView ? { width: `${skill.level}%` } : {}}
+                              transition={{ duration: 1, delay: 0.2 * index }}
+                              className={`h-full rounded-full bg-gradient-to-r ${categories[category]?.color}`}
+                            />
+                          </div>
+                          
+                          {/* Tooltip on hover */}
+                          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                            {skill.level}% proficiency
+                          </div>
                         </div>
-                        
-                        {/* Skill name */}
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300 text-center group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                          {skill.name}
-                        </span>
-                        
-                        {/* Experience level indicator */}
-                        <div className="w-full mt-2 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            animate={inView ? { width: `${skill.level}%` } : {}}
-                            transition={{ duration: 1, delay: 0.2 * index }}
-                            className={`h-full rounded-full bg-gradient-to-r ${categories[category]?.color}`}
-                          />
-                        </div>
-                        
-                        {/* Tooltip on hover */}
-                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                          {skill.level}% proficiency
-                        </div>
-                      </div>
-                    </motion.div>
-                  );
-                })}
+                      </motion.div>
+                    );
+                  })}
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
 
-        {/* Optional: Skills Cloud / Tag Section */}
+        {/* Soft Skills Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 text-center"
+          className="mt-10"
         >
-          <div className="inline-flex flex-wrap justify-center gap-3 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
-            {skills.map((skill, index) => (
-              <motion.span
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.3, delay: 0.9 + index * 0.05 }}
-                whileHover={{ scale: 1.1, y: -2 }}
-                className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-all cursor-default"
-                style={{
-                  background: `linear-gradient(135deg, ${colorMap[skill.name]}20, transparent)`,
-                  borderLeft: `3px solid ${colorMap[skill.name]}`
-                }}
-              >
-                {skill.name}
-              </motion.span>
-            ))}
+          {/* Section Header */}
+          {/* <div className="flex items-center gap-3 mb-6">
+            <div className="bg-gradient-to-r from-rose-500 to-orange-400 p-3 rounded-xl text-white shadow-lg text-2xl">
+              🤝
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">Soft Skills</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">{softSkills.length} skills</p>
+            </div>
+          </div> */}
+
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6">
+            <motion.div
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
+              variants={containerVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+            >
+              {softSkills.map((skill, index) => {
+                const IconComponent = iconMap[skill.name] || FiZap;
+                const iconColor = colorMap[skill.name] || '#F43F5E';
+
+                return (
+                  <motion.div
+                    key={skill.name}
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.05, y: -3 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group relative"
+                  >
+                    <div
+                      className="flex flex-col items-center p-4 rounded-xl border transition-all duration-300 hover:shadow-md cursor-default"
+                      style={{
+                        background: `linear-gradient(135deg, ${iconColor}15, transparent)`,
+                        borderColor: `${iconColor}40`,
+                      }}
+                    >
+                      {/* Icon */}
+                      <div className="relative mb-2">
+                        <div
+                          className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-300 blur-lg"
+                          style={{ backgroundColor: iconColor }}
+                        />
+                        <IconComponent
+                          className="w-7 h-7 transition-all duration-300 group-hover:scale-110"
+                          style={{ color: iconColor }}
+                        />
+                      </div>
+
+                      {/* Skill Name */}
+                      <span className="text-xs font-medium text-gray-700 dark:text-gray-300 text-center leading-tight group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                        {skill.name}
+                      </span>
+
+                      {/* Colored bottom accent bar */}
+                      <div
+                        className="w-8 h-0.5 rounded-full mt-2 opacity-60 group-hover:opacity-100 group-hover:w-full transition-all duration-300"
+                        style={{ backgroundColor: iconColor }}
+                      />
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
           </div>
         </motion.div>
       </div>

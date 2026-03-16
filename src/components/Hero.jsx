@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiDownload, FiFolder } from 'react-icons/fi';
+import { FiDownload, FiArrowRight } from 'react-icons/fi';
 import { personalInfo } from '../utils/constants';
 
 const Hero = () => {
@@ -20,14 +20,14 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary-400/10 to-primary-600/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="section-container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+      <div className="section-container relative z-10 w-full">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 xl:gap-32">
+          {/* Left Content - Text Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+            className="flex-1 text-center lg:text-left max-w-2xl"
           >
             {/* Greeting Badge */}
             <motion.div
@@ -47,7 +47,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-4"
             >
               Hi, I'm{' '}
               <span className="relative">
@@ -65,7 +65,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-4"
+              className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-4"
             >
               {personalInfo.role}
             </motion.h2>
@@ -74,7 +74,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0"
+              className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0"
             >
               {personalInfo.tagline}
             </motion.p>
@@ -84,9 +84,8 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-wrap gap-5 justify-center lg:justify-start"
+              className="flex flex-wrap gap-4 justify-center lg:justify-start"
             >
-              {/* Projects Button  */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -94,8 +93,8 @@ const Hero = () => {
                 className="group relative flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  <FiFolder className="group-hover:rotate-12 transition-transform duration-300" />
                   View Projects
+                  <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
                 <motion.div 
                   className="absolute inset-0 bg-gradient-to-r from-primary-700 to-primary-600"
@@ -105,7 +104,6 @@ const Hero = () => {
                 />
               </motion.button>
 
-              {/* Resume Button */}
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -119,7 +117,8 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Avatar */}
+          {/* Right Content - Avatar Section */}
+           {/* Right Content - Avatar */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -165,7 +164,6 @@ const Hero = () => {
                         src={personalInfo.image}
                         alt={personalInfo.title}
                         className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center"
-                      //   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                     
                     {/* Online Status Indicator */}

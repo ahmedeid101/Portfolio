@@ -37,7 +37,6 @@ export const services = [
       "Responsive and mobile-first interfaces",
       "Authentication and authorization systems"
     ],
-    price: "Starting at $5,000",
     timeline: "2-8 weeks",
     color: "from-blue-600 to-cyan-600",
     bgColor: "bg-blue-50 dark:bg-blue-900/20",
@@ -60,7 +59,6 @@ export const services = [
       "Responsive and mobile-first design",
       "Performance optimization and SEO"
     ],
-    price: "Starting at $3,000",
     timeline: "2-6 weeks",
     color: "from-purple-600 to-pink-600",
     bgColor: "bg-purple-50 dark:bg-purple-900/20",
@@ -83,7 +81,6 @@ export const services = [
       "File upload and processing",
       "WebSocket real-time features"
     ],
-    price: "Starting at $4,000",
     timeline: "3-6 weeks",
     color: "from-green-600 to-emerald-600",
     bgColor: "bg-green-50 dark:bg-green-900/20",
@@ -106,7 +103,6 @@ export const services = [
       "Real-time data synchronization",
       "Data modeling and relationships"
     ],
-    price: "Starting at $2,500",
     timeline: "1-4 weeks",
     color: "from-yellow-600 to-orange-600",
     bgColor: "bg-yellow-50 dark:bg-yellow-900/20",
@@ -129,7 +125,6 @@ export const services = [
       "Webhook implementation",
       "API documentation (Swagger/OpenAPI)"
     ],
-    price: "Starting at $3,000",
     timeline: "2-5 weeks",
     color: "from-indigo-600 to-blue-600",
     bgColor: "bg-indigo-50 dark:bg-indigo-900/20",
@@ -152,7 +147,6 @@ export const services = [
       "Auto-scaling configuration",
       "Domain and SSL configuration"
     ],
-    price: "Starting at $2,000",
     timeline: "1-3 weeks",
     color: "from-orange-600 to-red-600",
     bgColor: "bg-orange-50 dark:bg-orange-900/20",
@@ -175,7 +169,6 @@ export const services = [
       "Inventory management",
       "Customer accounts and reviews"
     ],
-    price: "Starting at $6,000",
     timeline: "4-10 weeks",
     color: "from-pink-600 to-rose-600",
     bgColor: "bg-pink-50 dark:bg-pink-900/20",
@@ -198,7 +191,6 @@ export const services = [
       "Bundle size reduction",
       "Performance monitoring"
     ],
-    price: "Starting at $2,500",
     timeline: "2-4 weeks",
     color: "from-teal-600 to-cyan-600",
     bgColor: "bg-teal-50 dark:bg-teal-900/20",
@@ -221,7 +213,6 @@ export const services = [
       "Security headers configuration",
       "Regular security audits"
     ],
-    price: "Starting at $2,000",
     timeline: "1-3 weeks",
     color: "from-red-600 to-rose-600",
     bgColor: "bg-red-50 dark:bg-red-900/20",
@@ -244,7 +235,6 @@ export const services = [
       "Technical documentation",
       "Development workflow optimization"
     ],
-    price: "$150/hour",
     timeline: "Flexible",
     color: "from-gray-600 to-gray-800",
     bgColor: "bg-gray-50 dark:bg-gray-800/40",
@@ -255,9 +245,9 @@ export const services = [
 ];
 
 export const stats = [
-  { value: "50+", label: "Projects Completed" },
-  { value: "30+", label: "Happy Clients" },
-  { value: "5+",  label: "Years Experience" },
+  { value: "10+", label: "Projects Completed" },
+  { value: "10+", label: "Happy Clients" },
+  { value: "2+",  label: "Years Experience" },
   { value: "24/7", label: "Support" },
 ];
 

@@ -58,22 +58,6 @@ export const skills = [
 
 ];
 
-// export const softSkills = [
-//   // Soft Skills (no level percentage, just presence)
-//   { name: "Team Collaboration", category: "softskills" },
-//   { name: "Communication", category: "softskills" },
-//   { name: "Time Management", category: "softskills" },
-//   { name: "Problem Solving", category: "softskills" },
-//   { name: "Leadership", category: "softskills" },
-//   { name: "Adaptability", category: "softskills" },
-//   { name: "Critical Thinking", category: "softskills" },
-//   { name: "Empathy", category: "softskills" },
-//   { name: "Conflict Resolution", category: "softskills" },
-//   { name: "Continuous Learning", category: "softskills" },
-//   { name: "Mentoring", category: "softskills" },
-//   { name: "Project Management", category: "softskills" }
-// ];
-
 export const projects = [
   {
     id: 1,

@@ -95,7 +95,7 @@ export const timeline = [
   {
     year: "2026 - Present",
     title: "Full Stack Developer / MERN Stack",
-    organization: "Digiliance",
+    organization: "Digilians",
     description: "Worked on multiple MERN stack projects, gaining experience in React, Node.js, MongoDB, authentication, and deployment workflows."
   },
   {

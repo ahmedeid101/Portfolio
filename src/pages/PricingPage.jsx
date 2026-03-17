@@ -20,6 +20,7 @@ import {
   SiExpress,
   SiAmazonaws,
 } from 'react-icons/si';
+import { personalInfo } from '../utils/constants';
 
 const PricingPage = () => {
   const navigate = useNavigate();
@@ -33,8 +34,8 @@ const PricingPage = () => {
       name: 'Basic',
       icon: <FiBriefcase className="w-6 h-6" />,
       description: 'Perfect for small businesses and startups looking to establish their online presence.',
-      monthlyPrice: 999,
-      yearlyPrice: 9999,
+      monthlyPrice: 300-500,
+      yearlyPrice: 3000-5000,
       setupFee: 499,
       features: [
         { name: 'Custom Website (5 pages)', included: true },
@@ -60,8 +61,8 @@ const PricingPage = () => {
       name: 'Professional',
       icon: <FiTrendingUp className="w-6 h-6" />,
       description: 'Ideal for growing businesses that need advanced features and scalability.',
-      monthlyPrice: 2499,
-      yearlyPrice: 24999,
+      monthlyPrice: 1500-3000,
+      yearlyPrice: 5000-9000,
       setupFee: 999,
       features: [
         { name: 'Custom Website (10+ pages)', included: true },
@@ -87,8 +88,8 @@ const PricingPage = () => {
       name: 'Enterprise',
       icon: <FiStar className="w-6 h-6" />,
       description: 'For large organizations requiring custom solutions and dedicated support.',
-      monthlyPrice: 4999,
-      yearlyPrice: 49999,
+      monthlyPrice: 5000-7000,
+      yearlyPrice: 12000-15000,
       setupFee: 1999,
       features: [
         { name: 'Custom Web Application', included: true },
@@ -115,23 +116,23 @@ const PricingPage = () => {
   const individualServices = [
     {
       name: 'Frontend Development',
-      price: '$2,500 - $5,000',
-      duration: '2-4 weeks',
+      price: '$300 - $500',
+      duration: '1-2 weeks',
       icon: <SiReact className="w-5 h-5" style={{ color: '#61DAFB' }} />,
       description: 'React, Next.js, TypeScript, Tailwind CSS',
       popular: true
     },
     {
       name: 'Backend Development',
-      price: '$3,000 - $6,000',
-      duration: '3-6 weeks',
+      price: '$600 - $900',
+      duration: '2-3 weeks',
       icon: <SiNodedotjs className="w-5 h-5" style={{ color: '#339933' }} />,
       description: 'Node.js, Express, NestJS, GraphQL',
       popular: false
     },
     {
       name: 'Database Design',
-      price: '$1,500 - $3,500',
+      price: '$400 - $600',
       duration: '1-3 weeks',
       icon: <SiMongodb className="w-5 h-5" style={{ color: '#47A248' }} />,
       description: 'MongoDB, PostgreSQL, Firebase, Redis',
@@ -139,7 +140,7 @@ const PricingPage = () => {
     },
     {
       name: 'API Development',
-      price: '$2,000 - $4,000',
+      price: '$400 - $800',
       duration: '2-4 weeks',
       icon: <SiExpress className="w-5 h-5" style={{ color: '#000000' }} />,
       description: 'RESTful APIs, GraphQL, Webhooks',
@@ -147,7 +148,7 @@ const PricingPage = () => {
     },
     {
       name: 'Cloud Deployment',
-      price: '$1,500 - $3,000',
+      price: '$400 - $600',
       duration: '1-2 weeks',
       icon: <SiAmazonaws className="w-5 h-5" style={{ color: '#FF9900' }} />,
       description: 'AWS, Docker, CI/CD, Kubernetes',
@@ -155,8 +156,8 @@ const PricingPage = () => {
     },
     {
       name: 'E-commerce Solution',
-      price: '$5,000 - $10,000',
-      duration: '4-8 weeks',
+      price: '$800 - $1200',
+      duration: '2-4 weeks',
       icon: <FiTrendingUp className="w-5 h-5" />,
       description: 'Full e-commerce platform with payment integration',
       popular: true
@@ -503,14 +504,14 @@ const PricingPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/')}
                 className="px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group"
               >
                 <FiMail className="group-hover:scale-110 transition-transform" />
                 Contact Me
               </button>
               <button
-                onClick={() => window.location.href = 'mailto:ahmed.eid@example.com'}
+                onClick={() => window.location.href = personalInfo.whatsapp}
                 className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <FiHeadphones className="w-5 h-5" />

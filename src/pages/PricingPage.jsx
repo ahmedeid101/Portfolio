@@ -1,5 +1,7 @@
+// src/pages/PricingPage.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import {containerVariants, itemVariants} from '../utils/animations'
 import { useNavigate } from 'react-router-dom';
 import { 
   FiCheck, 
@@ -25,7 +27,30 @@ import { personalInfo } from '../utils/constants';
 const PricingPage = () => {
   const navigate = useNavigate();
   const [billingCycle, setBillingCycle] = useState('monthly');
+  // Fix: Properly destructure useState
   const [setSelectedPackage] = useState(null);
+
+  // Function to handle navigation to home with specific section
+  const navigateToHome = () => {
+    navigate('/');
+    // Small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
+  // Function to handle package selection and navigation
+  const handlePackageSelect = (packageId) => {
+    setSelectedPackage(packageId);
+    navigateToHome();
+    // Scroll to contact section after navigation
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 200);
+  };
 
   // Pricing packages data
   const packages = [
@@ -34,8 +59,8 @@ const PricingPage = () => {
       name: 'Basic',
       icon: <FiBriefcase className="w-6 h-6" />,
       description: 'Perfect for small businesses and startups looking to establish their online presence.',
-      monthlyPrice: 300-500,
-      yearlyPrice: 3000-5000,
+      monthlyPrice: '300-500',
+      yearlyPrice: '3000-5000',
       setupFee: 499,
       features: [
         { name: 'Custom Website (5 pages)', included: true },
@@ -61,8 +86,8 @@ const PricingPage = () => {
       name: 'Professional',
       icon: <FiTrendingUp className="w-6 h-6" />,
       description: 'Ideal for growing businesses that need advanced features and scalability.',
-      monthlyPrice: 1500-3000,
-      yearlyPrice: 5000-9000,
+      monthlyPrice: '1500-3000',
+      yearlyPrice: '5000-9000',
       setupFee: 999,
       features: [
         { name: 'Custom Website (10+ pages)', included: true },
@@ -88,8 +113,8 @@ const PricingPage = () => {
       name: 'Enterprise',
       icon: <FiStar className="w-6 h-6" />,
       description: 'For large organizations requiring custom solutions and dedicated support.',
-      monthlyPrice: 5000-7000,
-      yearlyPrice: 12000-15000,
+      monthlyPrice: '5000-7000',
+      yearlyPrice: '12000-15000',
       setupFee: 1999,
       features: [
         { name: 'Custom Web Application', included: true },
@@ -202,30 +227,6 @@ const PricingPage = () => {
     }
   ];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12
-      }
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -233,7 +234,7 @@ const PricingPage = () => {
         <motion.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          onClick={() => navigate('/')}
+          onClick={navigateToHome}
           className="mb-8 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors group"
         >
           <FiArrowLeft className="group-hover:-translate-x-1 transition-transform" />
@@ -368,9 +369,9 @@ const PricingPage = () => {
                 </div>
               </div>
 
-              {/* CTA Button */}
+              {/* CTA Button - Fixed onClick handler */}
               <button
-                onClick={() => setSelectedPackage(pkg.id)}
+                onClick={() => handlePackageSelect(pkg.id)}
                 className={`w-full py-3 rounded-xl text-white font-medium transition-all duration-300 ${
                   pkg.recommended
                     ? 'bg-gradient-to-r from-primary-600 to-primary-500 hover:shadow-xl'
@@ -504,19 +505,21 @@ const PricingPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={() => navigate('/')}
+                onClick={() => handlePackageSelect()}
                 className="px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group"
               >
                 <FiMail className="group-hover:scale-110 transition-transform" />
                 Contact Me
               </button>
-              <button
-                onClick={() => window.location.href = personalInfo.whatsapp}
+              <a
+                href={personalInfo.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <FiHeadphones className="w-5 h-5" />
                 Schedule a Call
-              </button>
+              </a>
             </div>
           </div>
         </motion.div>

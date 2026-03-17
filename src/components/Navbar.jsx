@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FiMenu, FiX } from 'react-icons/fi';
 import ThemeToggle from './ThemeToggle';
-import LanguageSwitcher from './Layout/LanguageSwitcher';
 
 const Navbar = ({ theme, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,13 +57,11 @@ const Navbar = ({ theme, toggleTheme }) => {
               </motion.a>
             ))}
             <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-            <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="ml-4 rtl:mr-4 rtl:ml-0 text-gray-700 dark:text-gray-300"

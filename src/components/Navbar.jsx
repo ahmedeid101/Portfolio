@@ -21,10 +21,10 @@ const Navbar = ({ theme, toggleTheme }) => {
   const navLinks = [
     { key: 'home', href: '#home' },
     { key: 'about', href: '#about' },
+    { key: 'education', href: '#education' },
     { key: 'skills', href: '#skills' },
     { key: 'services', href: '#services' },
     { key: 'projects', href: '#projects' },
-    { key: 'education', href: '#education' },
     { key: 'contact', href: '#contact' }
   ];
 

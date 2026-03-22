@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// src/pages/PricingPage.jsx
+>>>>>>> 5e9ce7522b6a402713774a2c025b1953f8722175
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {containerVariants, itemVariants} from '../utils/animations'
@@ -27,7 +31,12 @@ const PricingPage = () => {
   const navigate = useNavigate();
   const [billingCycle, setBillingCycle] = useState('monthly');
   // Fix: Properly destructure useState
+<<<<<<< HEAD
   const [selectedPackage, setSelectedPackage] = useState(null);
+=======
+  const [setSelectedPackage] = useState(null);
+
+>>>>>>> 5e9ce7522b6a402713774a2c025b1953f8722175
   // Function to handle navigation to home with specific section
   const navigateToHome = () => {
     navigate('/');

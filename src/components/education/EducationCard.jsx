@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiCalendar, FiMapPin, FiCheckCircle, FiExternalLink, FiChevronDown } from 'react-icons/fi';
+=======
+// src/components/Education/EducationCard.jsx
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiCalendar, FiMapPin, FiCheckCircle, FiAward, FiExternalLink, FiChevronDown } from 'react-icons/fi';
+>>>>>>> 5e9ce7522b6a402713774a2c025b1953f8722175
 
 const EducationCard = ({ item, isSelected, onClick }) => {
   const [showAllActivities, setShowAllActivities] = useState(false);

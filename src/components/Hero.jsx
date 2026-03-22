@@ -118,6 +118,10 @@ const Hero = () => {
           </motion.div>
 
           {/* Right Content - Avatar Section */}
+<<<<<<< HEAD
+=======
+           {/* Right Content - Avatar */}
+>>>>>>> 5e9ce7522b6a402713774a2c025b1953f8722175
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}

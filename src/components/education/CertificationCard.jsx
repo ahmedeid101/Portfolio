@@ -1,6 +1,5 @@
-// src/components/Education/CertificationCard.jsx
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FiCalendar, FiExternalLink, FiChevronDown } from 'react-icons/fi';
 
 const CertificationCard = ({ item, onClick }) => {

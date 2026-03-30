@@ -1,6 +1,4 @@
-// src/components/Education/FilterBar.jsx
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FiSearch } from 'react-icons/fi';
 
 const FilterBar = ({ 

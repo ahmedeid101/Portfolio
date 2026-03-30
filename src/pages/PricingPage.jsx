@@ -1,4 +1,3 @@
-// src/pages/PricingPage.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {containerVariants, itemVariants} from '../utils/animations'

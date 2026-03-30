@@ -1,7 +1,6 @@
-// src/components/Education/EducationCard.jsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiCalendar, FiMapPin, FiCheckCircle, FiAward, FiExternalLink, FiChevronDown } from 'react-icons/fi';
+import { FiCalendar, FiMapPin, FiCheckCircle, FiExternalLink, FiChevronDown } from 'react-icons/fi';
 
 const EducationCard = ({ item, isSelected, onClick }) => {
   const [showAllActivities, setShowAllActivities] = useState(false);

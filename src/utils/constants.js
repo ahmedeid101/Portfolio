@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Ahmed Eid",
   role: "Full Stack Developer",
   tagline: "Building scalable web applications with MERN stack",
-  image: "/assets/images/ahmed.png",
+  image: "/assets/images/ahmed.jpeg",
   bio: `Engineer by training, developer by passion. I'm a Full-Stack Developer with hands-on experience building and deploying scalable web applications using JavaScript, 
   TypeScript, Java, and Python.I’ve developed everything from dynamic RESTful APIs to full-stack apps with secure authentication, responsive UIs, and cloud-hosted backends. 
   I’m comfortable working across the stack with frameworks like Node.js, Angular, React, Spring Boot, and databases like PostgreSQL, MongoDB, and MySQL.`,

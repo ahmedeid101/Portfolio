@@ -23,7 +23,7 @@ export const education = [
       "Led university coding workshops",
     ],
     achievements: [
-      "Graduation Project: AI-powered Healthcare System (Grade: Excellent)",
+      "Graduation Project: Secured Examination Management System (Grade: Excellent)",
       "Best Project Award in Faculty Competition",
     ],
     icon: FiBook,

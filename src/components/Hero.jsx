@@ -1,13 +1,14 @@
-// Hero.jsx - With animated rotating titles (Fixed)
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiDownload, FiArrowRight } from "react-icons/fi";
 import { personalInfo } from "../utils/constants";
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
   const [titleIndex, setTitleIndex] = useState(0);
   const titles = ["Software Engineer", "Full Stack Developer"];
 
+  const { t } = useTranslation();
   useEffect(() => {
     const interval = setInterval(() => {
       setTitleIndex((prev) => (prev + 1) % titles.length);
@@ -53,7 +54,7 @@ const Hero = () => {
             >
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
               <span className="text-sm text-primary-700 dark:text-primary-300 font-medium tracking-wide">
-                WELCOME TO MY WORLD
+                {t('welcome')}
               </span>
             </motion.div>
 

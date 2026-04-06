@@ -1,32 +1,31 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import Backend from 'i18next-http-backend';
 
-import translationEN from './locales/en/translation.json';
-import translationAR from './locales/ar/translation.json';
-
-const resources = {
-  en: {
-    translation: translationEN
-  },
-  ar: {
-    translation: translationAR
-  }
+// Don't initialize immediately, export a function
+export const initI18n = () => {
+  return i18n
+    .use(Backend)
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+      fallbackLng: 'en',
+      debug: false,
+      interpolation: {
+        escapeValue: false,
+      },
+      backend: {
+        loadPath: '/locales/{{lng}}/translation.json',
+      },
+      detection: {
+        order: ['localStorage', 'navigator'],
+        caches: ['localStorage'],
+      },
+      react: {
+        useSuspense: false, // This prevents loading suspense issues
+      },
+    });
 };
-
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources,
-    fallbackLng: 'en',
-    detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage']
-    },
-    interpolation: {
-      escapeValue: false
-    }
-  });
 
 export default i18n;

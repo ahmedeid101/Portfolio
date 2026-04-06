@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+
+/* Add to your index.css or App.css */
+html[dir="rtl"] {
+  text-align: right;
+}
+
+html[dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+html[dir="rtl"] .section-container {
+  direction: rtl;
+}
+
+/* Fix for grid layouts in RTL */
+html[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+/* Fix for flex layouts */
+html[dir="rtl"] .flex {
+  direction: rtl;
+}
+
+/* Fix for margins in RTL */
+html[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+html[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+html[dir="rtl"] .pl-8 {
+  padding-left: 0;
+  padding-right: 2rem;
+}
+
+html[dir="rtl"] .pr-8 {
+  padding-right: 0;
+  padding-left: 2rem;
+}

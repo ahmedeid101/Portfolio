@@ -39,7 +39,8 @@ const Navbar = ({ theme, toggleTheme }) => {
             transition={{ duration: 0.5 }}
             className="text-2xl font-bold gradient-text"
           >
-            AE
+            {/* Profile Icon */}
+            <img src="assets/images/logo.png" alt="Profile-logo" className="w-12 h-12 rounded-full object-cover" />
           </motion.div>
 
           {/* Desktop Menu */}

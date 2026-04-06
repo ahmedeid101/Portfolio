@@ -3,15 +3,71 @@ export const personalInfo = {
   role: "Full Stack Developer",
   tagline: "Building scalable web applications with MERN stack",
   image: "/assets/images/ahmed.jpeg",
-  bio: `Engineer by training, developer by passion. I'm a Full-Stack Developer with hands-on experience building and deploying scalable web applications using JavaScript, 
-  TypeScript, Java, and Python.I’ve developed everything from dynamic RESTful APIs to full-stack apps with secure authentication, responsive UIs, and cloud-hosted backends. 
-  I’m comfortable working across the stack with frameworks like Node.js, Angular, React, Spring Boot, and databases like PostgreSQL, MongoDB, and MySQL.`,
+  bio: `Engineer by training, developer by passion.
+I’m a Full Stack Developer specializing in building scalable and secure web applications using the MERN Stack (MongoDB, Express, React, Node.js).
+
+I help startups and businesses turn ideas into high-performance applications — improving performance by up to 35% and reducing page load time by 20% through efficient architecture and clean code practices.
+
+I don’t just write code that works — I focus on writing clean, maintainable, and scalable solutions. In real-world projects, I’ve enhanced operational tracking efficiency by 35% using real-time systems and modular backend design.
+
+I’ve built full-stack applications across multiple domains including e-learning, blogging, and hosting platforms, with a strong focus on performance, security, and user experience.
+
+Security and reliability are core to my work — I’ve implemented JWT authentication and role-based access control (RBAC) to secure 50+ user accounts.
+
+During my internship at The Sparks Foundation, I contributed to improving transaction tracking efficiency by 25%, gaining hands-on experience in building practical, scalable solutions.`,
   linkedin: "https://www.linkedin.com/in/ahmedeid11",
   github: "https://github.com/ahmedeid101",
   email: "ahmedgebrel101@gmail.com",
   whatsapp: "https://wa.me/201092887320",
   resumeUrl: "https://drive.google.com/file/d/1zajnLiOzCD0ttDr9hYB2nwGoKAsNkVsV/view?usp=drive_link"
 };
+
+export const workExperiences = [
+  {
+    year: "2026 - Present",
+    title: "Full Stack Developer / MERN Stack",
+    organization: "Digilians",
+    location: "Onsite",
+    challenge: "The company needed scalable web applications with real-time features, secure user authentication, and efficient data management to serve a growing user base of 10,000+ active users.",
+    action: "Architected and developed full-stack solutions using MERN stack. Implemented JWT-based authentication with refresh tokens, created RESTful APIs with Express, designed MongoDB schemas for optimal query performance, and set up CI/CD pipelines using GitHub Actions. Integrated real-time features using Socket.IO and optimized React components with memoization and lazy loading.",
+    result: "Delivered 3 major production applications with 99.9% uptime. Reduced API response time by 40% through database indexing and query optimization. Improved user engagement by 25% with real-time features. Streamlined deployment process reducing release time from 2 hours to 30 minutes.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Socket.IO", "JWT", "GitHub Actions", "Docker"],
+    highlights: ["Team Collaboration", "Code Reviews", "Agile Methodology", "Documentation"]
+  },
+  {
+    year: "2023 - 2025",
+    title: "Full Stack Developer / MERN Stack",
+    organization: "Freelance & Training Projects",
+    location: "Freelance",
+    challenge: "Clients required custom web applications with diverse features including e-commerce functionality, learning management systems, content management, and user engagement tools, all within tight deadlines.",
+    action: "Independently developed and deployed 5+ full-stack MERN applications. Built E-Learning Platform with video streaming and quiz system, Blog Website with SEO optimization, Page Turner (book tracking app) with reading statistics. Implemented Redux for complex state management, Stripe for payment processing, and deployed on Vercel and Heroku.",
+    result: "Successfully delivered all projects on time with 100% client satisfaction. Applications achieved average 85+ Lighthouse scores. Gained reputation leading to 3 repeat clients. Built reusable component library reducing development time by 30% for subsequent projects.",
+    technologies: ["React", "Redux", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Stripe", "Vercel"],
+    highlights: ["Client Communication", "Project Management", "Problem Solving", "Time Management"]
+  },
+  {
+    year: "2022 - 2023",
+    title: "Web Developer",
+    organization: "The Sparks Foundation",
+    location: "Remote Internship",
+    challenge: "Creating engaging user interfaces that are both visually appealing and highly functional while ensuring cross-browser compatibility and responsive design across all devices.",
+    action: "Developed responsive web applications using React functional components and hooks. Implemented responsive layouts with Tailwind CSS and Flexbox/Grid. Optimized images and assets for faster loading. Conducted cross-browser testing and fixed compatibility issues. Participated in daily stand-ups and code reviews.",
+    result: "Completed 4 major frontend projects with zero critical bugs. Improved First Contentful Paint by 35% through performance optimizations. Received 'Best Intern' award for code quality and initiative. Contributed to open-source components used by the organization.",
+    technologies: ["React", "Tailwind CSS", "JavaScript ES6+", "HTML5", "CSS3", "Git", "Figma"],
+    highlights: ["UI/UX Design", "Performance Optimization", "Cross-browser Testing", "Team Collaboration"]
+  },
+  // {
+  //   year: "2018 - 2023",
+  //   title: "B.Sc. System And Computer Engineering",
+  //   organization: "Al-Azhar University",
+  //   location: "Cairo, Egypt",
+  //   challenge: "Building a strong theoretical and practical foundation in computer engineering while specializing in modern web technologies and staying current with industry standards.",
+  //   action: "Completed 40+ courses covering programming, databases, networks, and software engineering. Graduated with Honors (GPA 3.5+). Led a team of 4 in final year project building a full-stack healthcare management system. Participated in university coding competitions and tech workshops.",
+  //   result: "Graduated with distinction among top 10% of class. Final year project received 'Best Project' award. Built portfolio of 10+ academic projects. Developed strong problem-solving and analytical skills. Established network of professional connections.",
+  //   technologies: ["JavaScript", "Python", "Java", "SQL", "MongoDB", "Data Structures", "Algorithms", "OOP"],
+  //   highlights: ["Academic Excellence", "Team Leadership", "Research Skills", "Continuous Learning"]
+  // }
+];
 
 export const skills = [
     // Frontend

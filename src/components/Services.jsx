@@ -102,7 +102,7 @@ const Services = () => {
   </motion.div>
 );
   return (
-    <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900 -scroll-mt-24">
       <div className="section-container">
 
         {/* Header */}

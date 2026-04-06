@@ -18,13 +18,13 @@ const Navbar = ({ theme, toggleTheme }) => {
   }, []);
 
   const navLinks = [
-    { key: 'Home', href: '#home' },
-    { key: 'About', href: '#about' },
-    { key: 'Education', href: '#education' },
-    { key: 'Skills', href: '#skills' },
-    { key: 'Services', href: '#services' },
-    { key: 'Projects', href: '#projects' },
-    { key: 'Contact', href: '#contact' }
+    { key: 'Home', href: '/' },
+    { key: 'About', href: '/#about' },
+    { key: 'Education', href: '/#education' },
+    { key: 'Skills', href: '/#skills' },
+    { key: 'Services', href: '/#services' },
+    { key: 'Projects', href: '/#projects' },
+    { key: 'Contact', href: '/#contact' }
   ];
 
   return (

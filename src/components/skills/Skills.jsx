@@ -25,7 +25,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 py-20"
+      className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 py-20 -scroll-mt-24"
     >
       <div className="section-container">
 

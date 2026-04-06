@@ -13,7 +13,7 @@ const Projects = () => {
   });
 
   return (
-    <section id="projects" className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-20">
+    <section id="projects" className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-20 -scroll-mt-24">
       <div className="section-container">
         {/* Header */}
         <motion.div

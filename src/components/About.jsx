@@ -22,7 +22,7 @@ const About = () => {
   });
 
   return (
-    <section id="about" className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 py-20">
+    <section id="about" className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 py-20 -scroll-mt-24">
       <div className="section-container">
         
         {/* Section Header */}
@@ -181,7 +181,7 @@ const About = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => {
-              document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+              document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }}
             className="mt-8 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-lg font-medium hover:shadow-xl transition-all inline-flex items-center gap-2 group"
           >

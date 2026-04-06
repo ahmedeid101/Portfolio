@@ -19,14 +19,14 @@ const Hero = () => {
   const scrollToProjects = () => {
     const projectsSection = document.getElementById("projects");
     if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth" });
+      projectsSection.scrollIntoView({ behavior: "smooth", block: "end" });
     }
   };
 
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center pt-16 relative overflow-hidden"
+      className="min-h-screen flex items-center pt-16 relative overflow-hidden -scroll-mt-24"
     >
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">

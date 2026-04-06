@@ -9,50 +9,17 @@ import {
   FiUsers,
   FiClock,
   FiCalendar,
-  FiMonitor, 
-  FiServer, 
-  FiDatabase, 
-  FiSettings,
 } from 'react-icons/fi';
 import { personalInfo, workExperiences } from '../utils/constants';
 import WorkExperience from './WorkExperience';
+import { fadeInUp, staggerContainer } from '../utils/animations';
+import { skillCategories } from '../utils/skills.config';
 
 const About = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  // Animation variants
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  // Skills categories
-  const skillCategories = [
-    { name: "Frontend", icon: FiMonitor, color: "blue", tech: "React, Next.js, Tailwind" },
-    { name: "Backend", icon: FiServer, color: "green", tech: "Node.js, Express, Python" },
-    { name: "Database", icon: FiDatabase, color: "yellow", tech: "MongoDB, PostgreSQL, Redis" },
-    { name: "DevOps", icon: FiSettings, color: "purple", tech: "Docker, AWS, CI/CD" }
-  ];
 
   return (
     <section id="about" className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 py-20">

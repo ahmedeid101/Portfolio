@@ -1,8 +1,5 @@
 import React from "react";
 import {
-  FiGithub,
-  FiLinkedin,
-  FiMail,
   FiArrowUp,
 } from "react-icons/fi";
 import { personalInfo } from "../utils/constants";
@@ -90,19 +87,6 @@ const Footer = () => {
           <p className="text-sm">
             © {currentYear} Ahmed Eid. All rights reserved.
           </p>
-
-          {/* Center - Socials */}
-          <div className="flex gap-4">
-            <a href={personalInfo.github} target="_blank" rel="noreferrer" className="hover:text-white">
-              <FiGithub size={18} />
-            </a>
-            <a href={personalInfo.linkedin} target="_blank"  rel="noreferrer" className="hover:text-white">
-              <FiLinkedin size={18} />
-            </a>
-            <a href={`mailto:${personalInfo.email}`} className="hover:text-white">
-              <FiMail size={18} />
-            </a>
-          </div>
 
           {/* Right - About Me (NEW) */}
           <p className="text-xs text-gray-500 text-center md:text-right max-w-xs">

@@ -19,7 +19,8 @@ During my internship at The Sparks Foundation, I contributed to improving transa
   github: "https://github.com/ahmedeid101",
   email: "ahmedgebrel101@gmail.com",
   whatsapp: "https://wa.me/201092887320",
-  resumeUrl: "https://drive.google.com/file/d/1zajnLiOzCD0ttDr9hYB2nwGoKAsNkVsV/view?usp=drive_link"
+  resumeUrl:
+    "https://drive.google.com/file/d/1zajnLiOzCD0ttDr9hYB2nwGoKAsNkVsV/view?usp=drive_link",
 };
 
 export const workExperiences = [
@@ -28,69 +29,108 @@ export const workExperiences = [
     title: "Full Stack Developer / MERN Stack",
     organization: "Digilians",
     location: "Onsite",
-    challenge: "The company needed scalable web applications with real-time features, secure user authentication, and efficient data management to serve a growing user base of 10,000+ active users.",
-    action: "Architected and developed full-stack solutions using MERN stack. Implemented JWT-based authentication with refresh tokens, created RESTful APIs with Express, designed MongoDB schemas for optimal query performance, and set up CI/CD pipelines using GitHub Actions. Integrated real-time features using Socket.IO and optimized React components with memoization and lazy loading.",
-    result: "Delivered 3 major production applications with 99.9% uptime. Reduced API response time by 40% through database indexing and query optimization. Improved user engagement by 25% with real-time features. Streamlined deployment process reducing release time from 2 hours to 30 minutes.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Socket.IO", "JWT", "GitHub Actions", "Docker"],
-    highlights: ["Team Collaboration", "Code Reviews", "Agile Methodology", "Documentation"]
+    challenge:
+      "The company needed scalable web applications with real-time features, secure user authentication, and efficient data management to serve a growing user base of 10,000+ active users.",
+    action:
+      "Architected and developed full-stack solutions using MERN stack. Implemented JWT-based authentication with refresh tokens, created RESTful APIs with Express, designed MongoDB schemas for optimal query performance, and set up CI/CD pipelines using GitHub Actions. Integrated real-time features using Socket.IO and optimized React components with memoization and lazy loading.",
+    result:
+      "Delivered 3 major production applications with 99.9% uptime. Reduced API response time by 40% through database indexing and query optimization. Improved user engagement by 25% with real-time features. Streamlined deployment process reducing release time from 2 hours to 30 minutes.",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+      "JWT",
+      "GitHub Actions",
+      "Docker",
+    ],
+    highlights: [
+      "Team Collaboration",
+      "Code Reviews",
+      "Agile Methodology",
+      "Documentation",
+    ],
   },
   {
     year: "2023 - 2025",
     title: "Full Stack Developer / MERN Stack",
     organization: "Freelance & Training Projects",
     location: "Freelance",
-    challenge: "Clients required custom web applications with diverse features including e-commerce functionality, learning management systems, content management, and user engagement tools, all within tight deadlines.",
-    action: "Independently developed and deployed 5+ full-stack MERN applications. Built E-Learning Platform with video streaming and quiz system, Blog Website with SEO optimization, Page Turner (book tracking app) with reading statistics. Implemented Redux for complex state management, Stripe for payment processing, and deployed on Vercel and Heroku.",
-    result: "Successfully delivered all projects on time with 100% client satisfaction. Applications achieved average 85+ Lighthouse scores. Gained reputation leading to 3 repeat clients. Built reusable component library reducing development time by 30% for subsequent projects.",
-    technologies: ["React", "Redux", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Stripe", "Vercel"],
-    highlights: ["Client Communication", "Project Management", "Problem Solving", "Time Management"]
+    challenge:
+      "Clients required custom web applications with diverse features including e-commerce functionality, learning management systems, content management, and user engagement tools, all within tight deadlines.",
+    action:
+      "Independently developed and deployed 5+ full-stack MERN applications. Built E-Learning Platform with video streaming and quiz system, Blog Website with SEO optimization, Page Turner (book tracking app) with reading statistics. Implemented Redux for complex state management, Stripe for payment processing, and deployed on Vercel and Heroku.",
+    result:
+      "Successfully delivered all projects on time with 100% client satisfaction. Applications achieved average 85+ Lighthouse scores. Gained reputation leading to 3 repeat clients. Built reusable component library reducing development time by 30% for subsequent projects.",
+    technologies: [
+      "React",
+      "Redux",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "Stripe",
+      "Vercel",
+    ],
+    highlights: [
+      "Client Communication",
+      "Project Management",
+      "Problem Solving",
+      "Time Management",
+    ],
   },
   {
     year: "2022 - 2023",
     title: "Web Developer",
     organization: "The Sparks Foundation",
     location: "Remote Internship",
-    challenge: "Creating engaging user interfaces that are both visually appealing and highly functional while ensuring cross-browser compatibility and responsive design across all devices.",
-    action: "Developed responsive web applications using React functional components and hooks. Implemented responsive layouts with Tailwind CSS and Flexbox/Grid. Optimized images and assets for faster loading. Conducted cross-browser testing and fixed compatibility issues. Participated in daily stand-ups and code reviews.",
-    result: "Completed 4 major frontend projects with zero critical bugs. Improved First Contentful Paint by 35% through performance optimizations. Received 'Best Intern' award for code quality and initiative. Contributed to open-source components used by the organization.",
-    technologies: ["React", "Tailwind CSS", "JavaScript ES6+", "HTML5", "CSS3", "Git", "Figma"],
-    highlights: ["UI/UX Design", "Performance Optimization", "Cross-browser Testing", "Team Collaboration"]
+    challenge:
+      "Creating engaging user interfaces that are both visually appealing and highly functional while ensuring cross-browser compatibility and responsive design across all devices.",
+    action:
+      "Developed responsive web applications using React functional components and hooks. Implemented responsive layouts with Tailwind CSS and Flexbox/Grid. Optimized images and assets for faster loading. Conducted cross-browser testing and fixed compatibility issues. Participated in daily stand-ups and code reviews.",
+    result:
+      "Completed 4 major frontend projects with zero critical bugs. Improved First Contentful Paint by 35% through performance optimizations. Received 'Best Intern' award for code quality and initiative. Contributed to open-source components used by the organization.",
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "JavaScript ES6+",
+      "HTML5",
+      "CSS3",
+      "Git",
+      "Figma",
+    ],
+    highlights: [
+      "UI/UX Design",
+      "Performance Optimization",
+      "Cross-browser Testing",
+      "Team Collaboration",
+    ],
   },
-  // {
-  //   year: "2018 - 2023",
-  //   title: "B.Sc. System And Computer Engineering",
-  //   organization: "Al-Azhar University",
-  //   location: "Cairo, Egypt",
-  //   challenge: "Building a strong theoretical and practical foundation in computer engineering while specializing in modern web technologies and staying current with industry standards.",
-  //   action: "Completed 40+ courses covering programming, databases, networks, and software engineering. Graduated with Honors (GPA 3.5+). Led a team of 4 in final year project building a full-stack healthcare management system. Participated in university coding competitions and tech workshops.",
-  //   result: "Graduated with distinction among top 10% of class. Final year project received 'Best Project' award. Built portfolio of 10+ academic projects. Developed strong problem-solving and analytical skills. Established network of professional connections.",
-  //   technologies: ["JavaScript", "Python", "Java", "SQL", "MongoDB", "Data Structures", "Algorithms", "OOP"],
-  //   highlights: ["Academic Excellence", "Team Leadership", "Research Skills", "Continuous Learning"]
-  // }
 ];
 
 export const skills = [
-    // Frontend
+  // Frontend
   { name: "React", level: 100, category: "frontend" },
   { name: "TypeScript", level: 100, category: "frontend" },
   { name: "Redux", level: 100, category: "frontend" },
   { name: "Tailwind CSS", level: 100, category: "frontend" },
   { name: "HTML5", level: 100, category: "frontend" },
   { name: "CSS3", level: 100, category: "frontend" },
-  
+
   // Backend
   { name: "Node.js", level: 100, category: "backend" },
   { name: "Express", level: 100, category: "backend" },
   { name: "Nest", level: 100, category: "backend" },
   { name: "GraphQL", level: 100, category: "backend" },
   { name: "REST APIs", level: 100, category: "backend" },
-  
+
   // Database
   { name: "MySQL", level: 100, category: "database" },
   { name: "MongoDB", level: 100, category: "database" },
   { name: "Firebase", level: 100, category: "database" },
   { name: "PostgreSQL", level: 100, category: "database" },
-  
+
   // Tools & Workflow
   { name: "Git", level: 100, category: "tools" },
   { name: "Docker", level: 100, category: "tools" },
@@ -110,41 +150,7 @@ export const skills = [
   { name: "Conflict Resolution", category: "softskills" },
   { name: "Continuous Learning", category: "softskills" },
   { name: "Mentoring", category: "softskills" },
-  { name: "Project Management", category: "softskills" }
-
-];
-
-export const projects = [
-  {
-    id: 1,
-    title: "E-Learning Platform",
-    description: "Full-stack online learning platform with course management, lessons, assessments, and student enrollment.",
-    image: "/assets/images/project1.jpg",
-    techStack: ["React", "Node.js", "Express", "MongoDB", "Redux", "JWT", "Tailwind CSS"],
-    github: "https://github.com/ahmedeid101/E-learning-Platform",
-    live: "https://elearning-demo.com",
-    featured: true
-  },
-  {
-    id: 2,
-    title: "Blog Website",
-    description: "Full-stack blog platform with user authentication, post creation, comments, and responsive UI.",
-    image: "/assets/images/project2.webp",
-    techStack: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS"],
-    github: "https://github.com/ahmedeid101/Blog-Website-MERN",
-    live: "https://blog-website-demo.com",
-    featured: true
-  },
-  {
-    id: 3,
-    title: "Page Turner",
-    description: "Interactive reading and note-taking web app with page flipping animations and user libraries.",
-    image: "/assets/images/project3.webp",
-    techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-    github: "https://github.com/ahmedeid101/Page_Turner",
-    live: "https://pageturner-store.netlify.app/",
-    featured: true
-  }
+  { name: "Project Management", category: "softskills" },
 ];
 
 export const timeline = [
@@ -152,24 +158,27 @@ export const timeline = [
     year: "2026 - Present",
     title: "Full Stack Developer / MERN Stack",
     organization: "Digilians",
-    description: "Worked on multiple MERN stack projects, gaining experience in React, Node.js, MongoDB, authentication, and deployment workflows."
+    description:
+      "Worked on multiple MERN stack projects, gaining experience in React, Node.js, MongoDB, authentication, and deployment workflows.",
   },
   {
     year: "2023 - 2025",
     title: "Full Stack Developer / MERN Stack",
     organization: "Freelance & Training Projects",
-    description: "Building full-stack applications including E-Learning Platform, Blog Website, Page Turner, and other MERN projects, using React, Node.js, Express, MongoDB, Redux, and Tailwind CSS."
+    description:
+      "Building full-stack applications including E-Learning Platform, Blog Website, Page Turner, and other MERN projects, using React, Node.js, Express, MongoDB, Redux, and Tailwind CSS.",
   },
   {
     year: "2022 - 2023",
     title: "Frontend Developer",
     organization: "The Sparks Foundation",
-    description: "Built responsive and modern web interfaces using React and Tailwind CSS, focusing on usability and UI/UX design."
+    description:
+      "Built responsive and modern web interfaces using React and Tailwind CSS, focusing on usability and UI/UX design.",
   },
   {
     year: "2018-2023",
     title: "B.Sc. System And Computer Engineering",
     organization: "Al-Azhar University",
-    description: "Graduated with honors, specialized in web technologies."
-  }
+    description: "Graduated with honors, specialized in web technologies.",
+  },
 ];

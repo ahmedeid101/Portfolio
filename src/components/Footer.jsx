@@ -2,8 +2,6 @@ import React from "react";
 import {
   FiArrowUp,
 } from "react-icons/fi";
-import { personalInfo } from "../utils/constants";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 

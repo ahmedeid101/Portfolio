@@ -20,7 +20,7 @@ const Hero = () => {
   const scrollToProjects = () => {
     const projectsSection = document.getElementById("projects");
     if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth", block: "end" });
+      projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -128,7 +128,7 @@ const Hero = () => {
                 onClick={scrollToProjects}
                 className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-lg shadow-lg hover:shadow-xl"
               >
-                My Portfolio
+                My Projects
                 <FiArrowRight className="group-hover:translate-x-1 transition" />
               </motion.button>
 

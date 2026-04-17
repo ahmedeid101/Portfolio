@@ -26,7 +26,7 @@ During my internship at The Sparks Foundation, I contributed to improving transa
 export const workExperiences = [
   {
     year: "2026 - Present",
-    title: "Full Stack Developer / MERN Stack",
+    title: "Software Engineer Trainee / MERN Stack",
     organization: "Digilians",
     location: "Onsite",
     challenge:

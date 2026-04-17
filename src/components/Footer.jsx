@@ -29,51 +29,11 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Middle - Links */}
-          <div className="flex gap-12 text-sm">
-            <div>
-              <h4 className="text-white mb-3 font-medium">Navigation</h4>
-              <ul className="space-y-2">
-                {["Home", "About", "Projects", "Contact"].map((item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="hover:text-white transition"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white mb-3 font-medium">Contact</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href={`mailto:${personalInfo.email}`} className="hover:text-white">
-                    {personalInfo.email}
-                  </a>
-                </li>
-                <li>
-                  <a href={personalInfo.github} target="_blank" rel="noreferrer" className="hover:text-white">
-                    GitHub
-                  </a>
-                </li>
-                <li>
-                  <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="hover:text-white">
-                    LinkedIn
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
           {/* Right - Scroll Button */}
           <div className="flex items-start md:items-center justify-end">
             <button
               onClick={scrollToTop}
-              className="p-2 border border-gray-700 rounded-lg hover:bg-gray-800 transition"
+              className="p-4 border border-white rounded-lg text-white hover:bg-gray-800 transition"
             >
               <FiArrowUp />
             </button>

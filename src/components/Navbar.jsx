@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FiMenu, FiX, FiGlobe } from 'react-icons/fi';
 import ThemeToggle from './ThemeToggle';
 
 const Navbar = ({ theme, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,25 +18,24 @@ const Navbar = ({ theme, toggleTheme }) => {
   }, []);
 
   const toggleLanguage = () => {
-    // For now, just toggle between English and Arabic without i18n
-    const html = document.documentElement;
-    const currentLang = html.lang || 'en';
-    const newLang = currentLang === 'en' ? 'ar' : 'en';
-    html.lang = newLang;
-    html.dir = newLang === 'ar' ? 'rtl' : 'ltr';
+    const newLang = i18n.language === 'en' ? 'ar' : 'en';
+    i18n.changeLanguage(newLang);
+    // Update document direction
+    document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = newLang;
+    // Store in localStorage
     localStorage.setItem('language', newLang);
-    
-    // Reload page to apply changes (temporary solution)
-    window.location.reload();
   };
 
   const navLinks = [
-    { key: 'Home', href: '/', en: 'HOME', ar: 'الرئيسية' },
-    { key: 'About', href: '/#about', en: 'ABOUT', ar: 'عني' },
-    { key: 'Education', href: '/#education', en: 'EDUCATION', ar: 'التعليم' },
-    { key: 'Skills', href: '/#skills', en: 'SKILLS', ar: 'المهارات' },
-    { key: 'Services', href: '/#services', en: 'SERVICES', ar: 'الخدمات' },
-    { key: 'Projects', href: '/#projects', en: 'PROJECTS', ar: 'المشاريع' }
+    { key: 'Home', href: '/' },
+    { key: 'About', href: '/#about' },
+    { key: 'Education', href: '/#education' },
+    { key: 'Skills', href: '/#skills' },
+    { key: 'Services', href: '/#services' },
+    { key: 'Projects', href: '/#projects' },
+    { key: 'Achievements', href: '/#achievements' },
+    { key: 'Testimonials', href: '/#testimonials' }
   ];
 
   const scrollToContact = () => {
@@ -44,9 +45,6 @@ const Navbar = ({ theme, toggleTheme }) => {
     }
     setIsOpen(false);
   };
-
-  const currentLang = document.documentElement.lang || 'en';
-  const isRTL = currentLang === 'ar';
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
@@ -68,7 +66,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className={`hidden md:flex items-center ${isRTL ? 'space-x-reverse' : ''} space-x-8`}>
+          <div className="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
             {navLinks.map((link, index) => (
               <motion.a
                 key={link.key}
@@ -78,7 +76,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium"
               >
-                {currentLang === 'ar' ? link.ar : link.en}
+                {t(`${link.key}`)}
               </motion.a>
             ))}
             
@@ -92,7 +90,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               onClick={scrollToContact}
               className="px-5 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 text-white font-medium shadow-md hover:shadow-lg transition-all"
             >
-              {currentLang === 'ar' ? 'اتصل بي' : 'CONTACT ME'}
+              {t('Contact')}
             </motion.button>
             
             {/* Language Toggle */}
@@ -105,7 +103,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             >
               <FiGlobe className="w-4 h-4" />
               <span className="text-sm font-medium">
-                {currentLang === 'en' ? 'AR' : 'EN'}
+                {i18n.language === 'en' ? 'AR' : 'EN'}
               </span>
             </motion.button>
             
@@ -140,7 +138,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                 onClick={() => setIsOpen(false)}
                 className="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
-                {currentLang === 'ar' ? link.ar : link.en}
+                {t(`${link.key.toLowerCase()}`)}
               </a>
             ))}
             
@@ -152,7 +150,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               }}
               className="w-full mt-2 px-5 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 text-white font-medium shadow-md text-left"
             >
-              {currentLang === 'ar' ? 'اتصل بي' : 'CONTACT ME'}
+              {t('nav.contact')}
             </button>
             
             {/* Language Toggle in Mobile */}
@@ -162,7 +160,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             >
               <FiGlobe className="w-4 h-4" />
               <span className="text-sm font-medium">
-                {currentLang === 'en' ? 'العربية' : 'English'}
+                {i18n.language === 'en' ? 'العربية' : 'English'}
               </span>
             </button>
           </motion.div>
@@ -174,16 +172,15 @@ const Navbar = ({ theme, toggleTheme }) => {
 
 export default Navbar;
 
+
 // import React, { useState, useEffect } from 'react';
 // import { motion } from 'framer-motion';
-// import { useTranslation } from 'react-i18next';
 // import { FiMenu, FiX, FiGlobe } from 'react-icons/fi';
 // import ThemeToggle from './ThemeToggle';
 
 // const Navbar = ({ theme, toggleTheme }) => {
 //   const [isOpen, setIsOpen] = useState(false);
 //   const [scrolled, setScrolled] = useState(false);
-//   const { t, i18n } = useTranslation();
 
 //   useEffect(() => {
 //     const handleScroll = () => {
@@ -194,22 +191,27 @@ export default Navbar;
 //   }, []);
 
 //   const toggleLanguage = () => {
-//     const newLang = i18n.language === 'en' ? 'ar' : 'en';
-//     i18n.changeLanguage(newLang);
-//     // Update document direction
-//     document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
-//     document.documentElement.lang = newLang;
-//     // Store in localStorage
+//     // For now, just toggle between English and Arabic without i18n
+//     const html = document.documentElement;
+//     const currentLang = html.lang || 'en';
+//     const newLang = currentLang === 'en' ? 'ar' : 'en';
+//     html.lang = newLang;
+//     html.dir = newLang === 'ar' ? 'rtl' : 'ltr';
 //     localStorage.setItem('language', newLang);
+    
+//     // Reload page to apply changes (temporary solution)
+//     window.location.reload();
 //   };
 
 //   const navLinks = [
-//     { key: 'Home', href: '/' },
-//     { key: 'About', href: '/#about' },
-//     { key: 'Education', href: '/#education' },
-//     { key: 'Skills', href: '/#skills' },
-//     { key: 'Services', href: '/#services' },
-//     { key: 'Projects', href: '/#projects' }
+//     { key: 'Home', href: '/', en: 'HOME', ar: 'الرئيسية' },
+//     { key: 'About', href: '/#about', en: 'ABOUT', ar: 'عني' },
+//     { key: 'Education', href: '/#education', en: 'EDUCATION', ar: 'التعليم' },
+//     { key: 'Skills', href: '/#skills', en: 'SKILLS', ar: 'المهارات' },
+//     { key: 'Services', href: '/#services', en: 'SERVICES', ar: 'الخدمات' },
+//     { key: 'Projects', href: '/#projects', en: 'PROJECTS', ar: 'المشاريع' },
+//     { key: 'Achievements', href: '/#achievements', en: 'ACHIEVEMENTS', ar: 'المشاريع' },
+//     { key: 'Testimonials', href: '/#testimonials', en: 'TESTIMONIALS', ar: 'المشاريع' }
 //   ];
 
 //   const scrollToContact = () => {
@@ -219,6 +221,9 @@ export default Navbar;
 //     }
 //     setIsOpen(false);
 //   };
+
+//   const currentLang = document.documentElement.lang || 'en';
+//   const isRTL = currentLang === 'ar';
 
 //   return (
 //     <nav className={`fixed w-full z-50 transition-all duration-300 ${
@@ -240,7 +245,7 @@ export default Navbar;
 //           </motion.div>
 
 //           {/* Desktop Menu */}
-//           <div className="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
+//           <div className={`hidden md:flex items-center ${isRTL ? 'space-x-reverse' : ''} space-x-8`}>
 //             {navLinks.map((link, index) => (
 //               <motion.a
 //                 key={link.key}
@@ -250,7 +255,7 @@ export default Navbar;
 //                 transition={{ duration: 0.5, delay: index * 0.1 }}
 //                 className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium"
 //               >
-//                 {t(`${link.key}`)}
+//                 {currentLang === 'ar' ? link.ar : link.en}
 //               </motion.a>
 //             ))}
             
@@ -264,7 +269,7 @@ export default Navbar;
 //               onClick={scrollToContact}
 //               className="px-5 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 text-white font-medium shadow-md hover:shadow-lg transition-all"
 //             >
-//               {t('Contact')}
+//               {currentLang === 'ar' ? 'اتصل بي' : 'CONTACT ME'}
 //             </motion.button>
             
 //             {/* Language Toggle */}
@@ -277,7 +282,7 @@ export default Navbar;
 //             >
 //               <FiGlobe className="w-4 h-4" />
 //               <span className="text-sm font-medium">
-//                 {i18n.language === 'en' ? 'AR' : 'EN'}
+//                 {currentLang === 'en' ? 'AR' : 'EN'}
 //               </span>
 //             </motion.button>
             
@@ -312,7 +317,7 @@ export default Navbar;
 //                 onClick={() => setIsOpen(false)}
 //                 className="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
 //               >
-//                 {t(`${link.key.toLowerCase()}`)}
+//                 {currentLang === 'ar' ? link.ar : link.en}
 //               </a>
 //             ))}
             
@@ -324,7 +329,7 @@ export default Navbar;
 //               }}
 //               className="w-full mt-2 px-5 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 text-white font-medium shadow-md text-left"
 //             >
-//               {t('nav.contact')}
+//               {currentLang === 'ar' ? 'اتصل بي' : 'CONTACT ME'}
 //             </button>
             
 //             {/* Language Toggle in Mobile */}
@@ -334,7 +339,7 @@ export default Navbar;
 //             >
 //               <FiGlobe className="w-4 h-4" />
 //               <span className="text-sm font-medium">
-//                 {i18n.language === 'en' ? 'العربية' : 'English'}
+//                 {currentLang === 'en' ? 'العربية' : 'English'}
 //               </span>
 //             </button>
 //           </motion.div>

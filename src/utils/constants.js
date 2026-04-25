@@ -145,12 +145,12 @@ export const skills = [
   { name: "Problem Solving", category: "softskills" },
   { name: "Leadership", category: "softskills" },
   { name: "Adaptability", category: "softskills" },
-  { name: "Critical Thinking", category: "softskills" },
-  { name: "Empathy", category: "softskills" },
-  { name: "Conflict Resolution", category: "softskills" },
-  { name: "Continuous Learning", category: "softskills" },
-  { name: "Mentoring", category: "softskills" },
-  { name: "Project Management", category: "softskills" },
+  // { name: "Critical Thinking", category: "softskills" },
+  // { name: "Empathy", category: "softskills" },
+  // { name: "Conflict Resolution", category: "softskills" },
+  // { name: "Continuous Learning", category: "softskills" },
+  // { name: "Mentoring", category: "softskills" },
+  // { name: "Project Management", category: "softskills" },
 ];
 
 export const timeline = [

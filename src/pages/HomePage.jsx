@@ -7,6 +7,8 @@ import Services from '../components/Services';
 import EducationCertifications from '../components/education/EducationCertifications';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import Achievements from '../components/Achievements';
+import Testimonials from '../components/Testimonials';
 
 const HomePage = () => {
   const location =  useLocation();
@@ -27,6 +29,8 @@ const HomePage = () => {
       <Skills />
       <Services />
       <Projects />
+      <Achievements />
+      <Testimonials />
       <Contact />
     </main>
   );
